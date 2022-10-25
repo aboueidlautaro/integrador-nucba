@@ -71,6 +71,7 @@ button {
   background-color: #000205;
   height: 21px;
   width: 100%;
+  z-index: 100000000;
 }
 
 header {
