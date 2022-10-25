@@ -66,12 +66,12 @@ button {
 }
 
 .clear--content {
-  position: fixed;
+  position: sticky;
   top: 0;
   background-color: #000205;
-  height: 21px;
+  height: 20px;
   width: 100%;
-  z-index: 100000000;
+  z-index: 99999;
 }
 
 header {
