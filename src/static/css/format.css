@@ -139,6 +139,7 @@ header {
   width: 100%;
   height: 100%;
   backdrop-filter: brightness(0.15);
+  -webkit-backdrop-filter: brightness(0.15);
   user-select: none;
 }
 
@@ -240,6 +241,7 @@ header {
   width: 100%;
   height: 100%;
   backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
   text-align: center;
 }
 .card__content {
@@ -280,6 +282,7 @@ header {
   width: 100%;
   height: 100%;
   backdrop-filter: brightness(0.15) saturate(80%);
+  -webkit-backdrop-filter: brightness(0.15) saturate(80%);
   display: flex;
   justify-content: center;
   align-items: center;
