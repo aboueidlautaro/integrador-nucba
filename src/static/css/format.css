@@ -4,6 +4,18 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
 
+:root {
+  --white: #fff;
+  --black: #000102;
+  --blue-ocean-primary: #15616d;
+  --blue-ocean-secondary: #669ead;
+  --border: #669ead31;
+  --blue-ocean-terciary: #76a0ac;
+  --blue-ocean-light: #bde3ec;
+  --background-module: rgba(0, 39, 48, 0.295);
+  --gray-primary: rgba(255, 255, 255, 0.411);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,12 +25,8 @@
 }
 
 body {
-  background-color: #000102;
-  color: #fff;
-}
-
-main {
-  overflow-x: hidden;
+  background-color: var(--black);
+  color: var(--white);
 }
 
 li {
@@ -27,7 +35,10 @@ li {
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: var(--white);
+}
+a:hover {
+  color: var(--blue-ocean-light);
 }
 button {
   cursor: pointer;
@@ -45,18 +56,31 @@ button {
   border-radius: 6px;
   font-size: 14px;
   font-weight: 700;
-  background-color: #fff;
-  color: #15616d;
+  background-color: var(--white);
+  color: var(--blue-ocean-primary);
+  border: 1px solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+.btn--primary:hover {
+  background-color: transparent;
+  border: 1px solid var(--white);
+  color: var(--white);
+  transition: all 0.3s ease-in-out;
 }
 
 .btn--secondary {
   padding: 10px 20px;
   border: none;
-  color: #fff;
+  color: var(--white);
   border-radius: 6px;
   font-size: 18px;
   font-weight: 500;
-  background-color: #669ead;
+  background-color: var(--blue-ocean-secondary);
+  transition: all 0.3s ease-in-out;
+}
+.btn--secondary:hover {
+  transition: all 0.3s ease-in-out;
+  background-color: var(--blue-ocean-primary);
 }
 
 .block {
@@ -73,7 +97,7 @@ button {
 .clear--content {
   position: sticky;
   top: 0;
-  background-color: #000205;
+  background-color: var(--black);
   height: 20px;
   width: 100%;
   z-index: 99999;
@@ -98,8 +122,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  border: 1px solid #669ead31;
+  border: 1px solid var(--border);
   border-radius: 10px;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
@@ -155,15 +178,15 @@ header {
 }
 
 .hero__content div:nth-child(1) {
-  color: #669ead;
+  color: var(--blue-ocean-secondary);
 }
 
 .hero__content div:nth-child(2) {
-  color: #76a0ac;
+  color: var(--blue-ocean-terciary);
 }
 
 .hero__content div:nth-child(3) {
-  color: #bde3ec;
+  color: var(--blue-ocean-light);
 }
 
 .hero__content--title {
@@ -201,21 +224,26 @@ header {
 }
 .features__text {
   margin: auto;
-  width: 30%;
-  min-width: 280px;
-  width: 400px;
+  width: 100%;
+  min-width: 250px;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
 }
 .features__text__title {
   font-size: 30px;
-  width: 80%;
+  width: 100%;
   font-weight: 700;
   padding-bottom: 20px;
+  text-align: center;
+}
+.features__text__title span {
+  font-family: "joefin sans", sans-serif;
+  font-weight: 900;
 }
 
 .features__cards {
-  width: 70%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -291,7 +319,7 @@ header {
   font-family: "josefin sans", sans-serif;
 }
 .card__content h3 {
-  color: rgb(82, 130, 160);
+  color: var(--blue-ocean-secondary);
   font-size: 24px;
   font-weight: 700;
 }
@@ -306,7 +334,7 @@ header {
   height: 50%;
 }
 .text--gradient {
-  background: #669ead;
+  background: var(--blue-ocean-secondary);
   background: linear-gradient(45deg, #669ead 0%, #bde3ec 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -333,7 +361,7 @@ header {
   flex-direction: column;
 }
 .primary--title {
-  font-size: 50px;
+  font-size: 32px;
   font-weight: 700;
   text-align: center;
 }
@@ -342,7 +370,7 @@ header {
   padding-top: 50px;
   width: 70%;
   text-align: center;
-  font-size: 24px;
+  font-size: 18px;
   opacity: 0.7;
   font-weight: 400;
 }
@@ -375,4 +403,117 @@ header {
   font-size: smaller;
   opacity: 0.8;
   text-decoration: underline;
+}
+
+.heroContainer__login {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  width: 100%;
+  background: url("../images/backgrounds/hero-background.webp") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.heroContent__login {
+  padding-top: 120px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: brightness(0.15);
+  -webkit-backdrop-filter: brightness(0.15);
+  user-select: none;
+}
+.login__container {
+  max-width: 400px;
+  height: 400px;
+  width: 90%;
+  border-radius: 10px;
+  z-index: 99999;
+  border: 1px solid var(--border);
+  background: var(--background-module);
+}
+.login__content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border: 2px solid wheat;
+}
+
+.flex--column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gap--15 {
+  gap: 15px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 0px 10px;
+  background: var(--background-module);
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border: 1px solid var(--white);
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+  color: var(--gray-primary);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.heroContainer__register {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  width: 100%;
+  background: url("../images/backgrounds/hero-background.webp") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.heroContent__register {
+  padding-top: 120px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: brightness(0.15);
+  -webkit-backdrop-filter: brightness(0.15);
+  user-select: none;
+}
+.register__container {
+  max-width: 400px;
+  height: 400px;
+  width: 90%;
+  border-radius: 10px;
+  z-index: 99999;
+  border: 1px solid var(--border);
+  background: var(--background-module);
+}
+.login__content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border: 2px solid wheat;
 }

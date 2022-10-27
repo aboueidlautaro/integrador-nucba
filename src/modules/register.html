@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lenny Bot Project - SignUp</title>
+    <link rel="stylesheet" href="../static/css/animations.css" />
+    <link rel="stylesheet" href="../static/css/mediaqueries.css" />
+    <link rel="stylesheet" href="../static/css/format.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header__container">
+        <img src="../static/images/logos/Lenny logo.svg" alt="" />
+        <nav>
+          <ul class="nav__menu">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../index.html#about">About</a></li>
+            <li><a href="../../index.html#features">Features</a></li>
+            <li><a href="../../index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header__buttons">
+          <a href="./login.html">LogIn</a>
+          <a href="src/modules/register.html" class="btn--primary">SignUp</a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="heroContainer__register">
+        <article class="heroContent__register">
+          <div class="register__container flex--column">
+            <form class="flex--column gap--15" action="">
+              <h2 class="primary--title text--gradient">Sign Up</h2>
+              <label for="username">Username</label>
+              <input
+                type="text"
+                name="username"
+                id="username"
+                placeholder="Type username here"
+              />
+              <label for="password">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Type password here"
+              />
+              <button type="submit" class="btn--primary">Sign Up</button>
+            </form>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
