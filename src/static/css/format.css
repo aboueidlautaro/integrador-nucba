@@ -9,11 +9,16 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: #000102;
   color: #fff;
+}
+
+main {
+  overflow-x: hidden;
 }
 
 li {
@@ -78,7 +83,7 @@ header {
   height: 100px;
   width: 100%;
   position: fixed;
-  top: 20px;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,11 +93,12 @@ header {
 
 .header__container {
   width: 98%;
-  height: 100px;
+  min-height: 100px;
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 80px;
+
   border: 1px solid #669ead31;
   border-radius: 10px;
   -webkit-backdrop-filter: blur(20px);
@@ -145,7 +151,7 @@ header {
 }
 
 .hero__content div {
-  line-height: 70px;
+  line-height: 50px;
 }
 
 .hero__content div:nth-child(1) {
@@ -161,20 +167,21 @@ header {
 }
 
 .hero__content--title {
-  font-size: 70px;
+  font-size: 42px;
   font-weight: 700;
   text-align: center;
   padding-bottom: 20px;
-  width: 100%;
+  width: 90%;
 }
 
 .hero__content--subtitle {
   font-size: 20px;
   font-weight: 200;
   text-align: center;
-  padding-top: 20px;
+  padding: 20px;
   padding-bottom: 100px;
-  width: 800px;
+  max-width: 800px;
+  width: 90%;
 }
 
 .features__container {
@@ -185,18 +192,26 @@ header {
 
 .features__content {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-around;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   gap: 20px;
 }
 .features__text {
+  margin: auto;
   width: 30%;
   min-width: 280px;
   width: 400px;
   display: flex;
   flex-direction: column;
+}
+.features__text__title {
+  font-size: 30px;
+  width: 80%;
+  font-weight: 700;
+  padding-bottom: 20px;
 }
 
 .features__cards {
@@ -214,10 +229,21 @@ header {
   overflow: hidden;
   position: relative;
   border-radius: 10px;
+  transition: all 0.5s ease;
 }
 
 .slime__content {
   overflow: hidden;
+  background: -moz-linear-gradient(
+    315deg,
+    rgba(29, 53, 87, 0.9),
+    rgba(69, 123, 157, 0.7)
+  );
+  background: -webkit-linear-gradient(
+    315deg,
+    rgba(29, 53, 87, 0.9),
+    rgba(69, 123, 157, 0.7)
+  );
   background: linear-gradient(
     315deg,
     rgba(29, 53, 87, 0.9),
@@ -226,13 +252,14 @@ header {
   animation: animate-slime 5s linear infinite, move-slime 10s linear infinite;
   position: relative;
   top: 40%;
-  width: 7vw;
-  height: 7vw;
+  width: 150px;
+  height: 150px;
   margin-top: 5vw;
   z-index: -1;
 }
 
 .card {
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -245,6 +272,20 @@ header {
   -webkit-backdrop-filter: blur(50px);
   text-align: center;
 }
+.slime__container:hover {
+  transform: scale(1.048);
+}
+.slime__container:hover:nth-child(1) .slime__content {
+  animation: hover-red infinite 0.5s, animate-slime 5s linear infinite,
+    move-slime 10s linear infinite;
+  transition: all 0.5s ease;
+}
+.slime__container:hover:nth-child(2) .slime__content {
+  animation: hover-green infinite 0.5s, animate-slime 5s linear infinite,
+    move-slime 10s linear infinite;
+  transition: all 0.5s ease;
+}
+
 .card__content {
   padding: 3px 3px 10px 3px;
   font-family: "josefin sans", sans-serif;
@@ -272,7 +313,8 @@ header {
 }
 
 .aboutUs__container {
-  height: 60vh;
+  min-height: 60vh;
+  height: auto;
   margin: auto;
   width: 100%;
   background: url("../images/backgrounds/background-aboutus.jpg") no-repeat;
@@ -281,6 +323,7 @@ header {
 }
 .aboutUs__content {
   width: 100%;
+  min-height: 60vh;
   height: 100%;
   backdrop-filter: brightness(0.15) saturate(80%);
   -webkit-backdrop-filter: brightness(0.15) saturate(80%);
@@ -289,7 +332,7 @@ header {
   align-items: center;
   flex-direction: column;
 }
-.aboutUs__title {
+.primary--title {
   font-size: 50px;
   font-weight: 700;
   text-align: center;
@@ -302,4 +345,34 @@ header {
   font-size: 24px;
   opacity: 0.7;
   font-weight: 400;
+}
+
+.contact__content {
+  padding: 30px 0px;
+  text-align: center;
+}
+.contact__social {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  padding: 20px 0px;
+}
+.contact__social a {
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+}
+.contact__social a:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+.contact__social a img {
+  width: 100%;
+  height: 100%;
+}
+.mail {
+  font-size: smaller;
+  opacity: 0.8;
+  text-decoration: underline;
 }
